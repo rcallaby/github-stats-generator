@@ -1,0 +1,36 @@
+<!-- widget.html -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>GitHub Stats Widget</title>
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="stylesheet" href="assets/css/themes.css" />
+    </head>
+    <body>
+        <div id="widget-root" class="widget card">
+            <div class="widget-header">
+                <strong id="user-handle">@user</strong>
+            </div>
+            <div class="widget-body">
+                <div id="widget-stats" class="stats-row">
+                    <div>
+                        <small>Total</small>
+                        <div id="w-total">—</div>
+                    </div>
+                    <div>
+                        <small>Current</small>
+                        <div id="w-current">—</div>
+                    </div>
+                    <div>
+                        <small>Longest</small>
+                        <div id="w-longest">—</div>
+                    </div>
+                </div>
+                <div id="w-graph"></div>
+            </div>
+        </div>
+        <script src="assets/js/widget.js"></script>
+    </body>
+</html>

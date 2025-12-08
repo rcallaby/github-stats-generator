@@ -1,0 +1,57 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GitHub Stats Widget — Prototype</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+</head>
+<body class="theme-light">
+    <main class="container">
+        <h1>GitHub Stats Widget — Prototype</h1>
+        <section class="controls">
+            <label>
+                GitHub username
+                <input id="username" placeholder="octocat" value="">
+            </label>
+            <label>
+                Theme
+                <select id="theme-select">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="solarized">Solarized</option>
+                </select>
+            </label>
+            <button id="fetch-btn">Fetch stats</button>
+            <button id="generate-embed">Generate embed snippet</button>
+        </section>
+
+        <section id="widget-preview" class="card">
+            <h2>Preview</h2>
+            <div id="stats">
+            <div class="stat"><span class="label">Total</span><span id="total">—</span></div>
+            <div class="stat"><span class="label">Current streak</span><span id="current-streak">—</span></div>
+            <div class="stat"><span class="label">Longest streak</span><span id="longest-streak">—</span></div>
+            </div>
+            <div id="graph" class="graph">Paste will appear here</div>
+        </section>
+
+        <aside id="embed-output" class="card hidden">
+            <h3>Embed snippet</h3>
+            <p>Paste one of these into your README.md. Host the files using GitHub Pages (see README).</p>
+            <label>Markdown</label>
+            <textarea id="markdown-snippet" readonly rows="3"></textarea>
+            <label>HTML</label>
+            <textarea id="html-snippet" readonly rows="3"></textarea>
+        </aside>
+
+
+<footer class="muted">Prototype — copy into a repo and host on GitHub Pages to use in READMEs.</footer>
+</main>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- generator.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Embed Generator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Embed Snippet Generator</h1>
+        <label>GitHub username <input id="gen-user" placeholder="octocat"></label>
+        <label>Theme <select id="gen-theme"><option>light</option><option>dark</option><option>solarized</option></select></label>
+        <label>Hosted URL (where widget.html lives)
+            <input id="host-url" placeholder="https://your-username.github.io/repo-name/" value="">
+        </label>
+        <button id="gen">Generate</button>
+
+        <section class="card">
+            <h3>Markdown (badge-like)</h3>
+            <textarea id="md" rows="3" readonly></textarea>
+            <h3>HTML (iframe)</h3>
+            <textarea id="html" rows="3" readonly></textarea>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('gen').addEventListener('click', () => {
+            const user = document.getElementById('gen-user').value.trim();
+            const theme = document.getElementById('gen-theme').value;
+            let host = document.getElementById('host-url').value.trim();
+            
+            if (!host) {
+                alert('Enter hosted URL where widget.html is available');
+                return;
+            }
+            
+            if (!host.endsWith('/')) host += '/';
+            
+            const widgetUrl = host + 'widget.html?user=' + encodeURIComponent(user) + '&theme=' + encodeURIComponent(theme);
+            const markdown = `[![GitHub Stats](${widgetUrl})](${widgetUrl})`;
+            const html = `<iframe src="${widgetUrl}" title="GitHub Stats for ${user}" style="border:0;width:430px;height:170px"></iframe>`;
+            
+            document.getElementById('md').value = markdown;
+            document.getElementById('html').value = html;
+        });
+    </script>
+</body>
+</html>

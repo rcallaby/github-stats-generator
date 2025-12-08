@@ -1,0 +1,24 @@
+/* assets/css/themes.css */
+.theme-light {
+    --bg: #f3f6fb;
+    --text: #0b1726;
+    --muted: #5b6b78;
+    --card: #ffffff;
+    --accent: #0366d6;
+}
+
+.theme-dark {
+    --bg: #0b1220;
+    --text: #e6eef6;
+    --muted: #9aa9b5;
+    --card: #071022;
+    --accent: #58a6ff;
+}
+
+.theme-solarized {
+    --bg: #fdf6e3;
+    --text: #073642;
+    --muted: #586e75;
+    --card: #eee8d5;
+    --accent: #b58900;
+}

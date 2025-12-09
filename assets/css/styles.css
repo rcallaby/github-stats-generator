@@ -97,3 +97,44 @@ button {
 .hidden {
     display: none;
 }
+
+/* additional widget polish */
+.widget {
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.widget .card {
+    box-shadow: none;
+    background: transparent;
+}
+
+.widget .widget-header {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    align-items: center;
+}
+
+.widget .widget-body {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+}
+
+.stat .value {
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+#widget-root img {
+    display: block;
+}
+
+#w-graph svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 6px 0;
+}
+
+#w-graph-wrap {
+    transition: all 240ms ease;
+}

@@ -1,36 +1,62 @@
 <!-- widget.html -->
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>GitHub Stats Widget</title>
-        <link rel="stylesheet" href="assets/css/styles.css" />
-        <link rel="stylesheet" href="assets/css/themes.css" />
-    </head>
-    <body>
-        <div id="widget-root" class="widget card">
-            <div class="widget-header">
-                <strong id="user-handle">@user</strong>
-            </div>
-            <div class="widget-body">
-                <div id="widget-stats" class="stats-row">
-                    <div>
-                        <small>Total</small>
-                        <div id="w-total">—</div>
-                    </div>
-                    <div>
-                        <small>Current</small>
-                        <div id="w-current">—</div>
-                    </div>
-                    <div>
-                        <small>Longest</small>
-                        <div id="w-longest">—</div>
-                    </div>
-                </div>
-                <div id="w-graph"></div>
-            </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub Stats Widget</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <style>
+    /* compact widget-specific rules so widget.html works standalone */
+    .widget { width: 420px; max-width:100%; --card-pad:12px; }
+    .widget .widget-header{ display:flex; align-items:center; justify-content:space-between; padding:var(--card-pad); }
+    .widget .handle{ font-weight:600; font-size:1rem; }
+    .widget .meta{ font-size:0.85rem; color:var(--muted); }
+    .widget .widget-body{ padding: 0 var(--card-pad) var(--card-pad); }
+    .stats-row{ display:flex; gap:10px; justify-content:space-between; margin-bottom:10px;}
+    .stat { flex:1; background:rgba(255,255,255,0.02); padding:8px;border-radius:8px;text-align:center; }
+    .stat small{ display:block; font-size:11px; color:var(--muted); margin-bottom:6px; }
+    .stat .value{ font-size:1.05rem; font-weight:700; }
+    .graph-wrap{ background:var(--card); padding:8px;border-radius:8px; overflow:auto; text-align:center; }
+    .sparkline{ width:100%; height:34px; margin-top:6px; }
+    .muted-line{ font-size:12px;color:var(--muted); margin-top:8px }
+  </style>
+</head>
+<body>
+  <div id="widget-root" class="widget card">
+    <div class="widget-header">
+      <div>
+        <div class="handle" id="user-handle">@rcallaby</div>
+        <div class="meta" id="user-meta">GitHub contributions</div>
+      </div>
+      <div id="avatar-wrap"></div>
+    </div>
+
+    <div class="widget-body">
+      <div id="widget-stats" class="stats-row">
+        <div class="stat">
+          <small>Total</small>
+          <div class="value" id="w-total">—</div>
         </div>
-        <script src="assets/js/widget.js"></script>
-    </body>
+        <div class="stat">
+          <small>Current</small>
+          <div class="value" id="w-current">—</div>
+        </div>
+        <div class="stat">
+          <small>Longest</small>
+          <div class="value" id="w-longest">—</div>
+        </div>
+      </div>
+
+      <div class="graph-wrap card" id="w-graph-wrap">
+        <div id="w-graph" aria-hidden="true">Loading contributions…</div>
+        <svg id="w-sparkline" class="sparkline" viewBox="0 0 200 34" preserveAspectRatio="none"></svg>
+        <div class="muted-line" id="w-note"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/widget.js"></script>
+</body>
 </html>

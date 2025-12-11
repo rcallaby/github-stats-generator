@@ -21,7 +21,24 @@
                 <select id="theme-select">
                     <option value="light">Light</option>
                     <option value="dark">Dark</option>
-                    <option value="solarized">Solarized</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="terminal">Terminal</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="solarized-light">Solarized Light</option>
+                    <option value="solarized-dark">Solarized Dark</option>
+                    <option value="gruvbox-dark">Gruvbox Dark</option>
+                    <option value="gruvbox-light">Gruvbox Light</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="nord">Nord</option>
+                    <option value="matrix">Matrix</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="neon-city">Neon City</option>
+                    <option value="firewatch">Firewatch</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="steampunk">Steampunk</option>
+                    <option value="futuregrid">Futuregrid</option>
                 </select>
             </label>
             <button id="fetch-btn">Fetch stats</button>
@@ -31,9 +48,9 @@
         <section id="widget-preview" class="card">
             <h2>Preview</h2>
             <div id="stats">
-            <div class="stat"><span class="label">Total</span><span id="total">—</span></div>
-            <div class="stat"><span class="label">Current streak</span><span id="current-streak">—</span></div>
-            <div class="stat"><span class="label">Longest streak</span><span id="longest-streak">—</span></div>
+                <div class="stat"><span class="label">Total</span><span id="total">—</span></div>
+                <div class="stat"><span class="label">Current streak</span><span id="current-streak">—</span></div>
+                <div class="stat"><span class="label">Longest streak</span><span id="longest-streak">—</span></div>
             </div>
             <div id="graph" class="graph">Paste will appear here</div>
         </section>
@@ -47,11 +64,9 @@
             <textarea id="html-snippet" readonly rows="3"></textarea>
         </aside>
 
+        <footer class="muted">Copy into a repo and host on GitHub Pages to use in READMEs.</footer>
+    </main>
 
-<footer class="muted">Copy into a repo and host on GitHub Pages to use in READMEs.</footer>
-</main>
-
-
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

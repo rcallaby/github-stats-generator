@@ -1,24 +1,228 @@
-/* assets/css/themes.css */
-.theme-light {
-    --bg: #f3f6fb;
-    --text: #0b1726;
-    --muted: #5b6b78;
-    --card: #ffffff;
-    --accent: #0366d6;
+/* Base Theme Variables */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #cccccc;
+  --card-bg: #f9f9f9;
+  --shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.theme-dark {
-    --bg: #0b1220;
-    --text: #e6eef6;
-    --muted: #9aa9b5;
-    --card: #071022;
-    --accent: #58a6ff;
+/* ------------------------------- */
+/* LIGHT THEME */
+/* ------------------------------- */
+body[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #222222;
+  --border: #dcdcdc;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.theme-solarized {
-    --bg: #fdf6e3;
-    --text: #073642;
-    --muted: #586e75;
-    --card: #eee8d5;
-    --accent: #b58900;
+/* ------------------------------- */
+/* DARK THEME */
+/* ------------------------------- */
+body[data-theme="dark"] {
+  --bg: #0e0e0e;
+  --text: #ededed;
+  --border: #2a2a2a;
+  --card-bg: #1a1a1a;
+  --shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ------------------------------- */
+/* CYBERPUNK */
+/* ------------------------------- */
+body[data-theme="cyberpunk"] {
+  --bg: #0d0221;
+  --text: #f8f005;
+  --border: #ff00d4;
+  --card-bg: #1a0033;
+  --shadow: 0 0 12px #ff00d4;
+}
+
+/* ------------------------------- */
+/* TERMINAL */
+/* ------------------------------- */
+body[data-theme="terminal"] {
+  --bg: #000000;
+  --text: #00ff00;
+  --border: #008800;
+  --card-bg: #000000;
+  --shadow: none;
+}
+
+/* ------------------------------- */
+/* MINIMAL */
+/* ------------------------------- */
+body[data-theme="minimal"] {
+  --bg: #fafafa;
+  --text: #333333;
+  --border: #e0e0e0;
+  --card-bg: #ffffff;
+  --shadow: none;
+}
+
+/* ------------------------------- */
+/* SOLARIZED LIGHT */
+/* ------------------------------- */
+body[data-theme="solarized-light"] {
+  --bg: #fdf6e3;
+  --text: #657b83;
+  --border: #eee8d5;
+  --card-bg: #fffaf0;
+  --shadow: 0 2px 6px rgba(88,110,117,0.15);
+}
+
+/* ------------------------------- */
+/* SOLARIZED DARK */
+/* ------------------------------- */
+body[data-theme="solarized-dark"] {
+  --bg: #002b36;
+  --text: #839496;
+  --border: #073642;
+  --card-bg: #003845;
+  --shadow: 0 2px 6px rgba(0,43,54,0.8);
+}
+
+/* ------------------------------- */
+/* GRUVBOX DARK */
+/* ------------------------------- */
+body[data-theme="gruvbox-dark"] {
+  --bg: #282828;
+  --text: #ebdbb2;
+  --border: #3c3836;
+  --card-bg: #1d2021;
+  --shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/* ------------------------------- */
+/* GRUVBOX LIGHT */
+/* ------------------------------- */
+body[data-theme="gruvbox-light"] {
+  --bg: #fbf1c7;
+  --text: #3c3836;
+  --border: #d5c4a1;
+  --card-bg: #f2e5bc;
+  --shadow: 0 2px 6px rgba(60,56,54,0.15);
+}
+
+/* ------------------------------- */
+/* DRACULA */
+/* ------------------------------- */
+body[data-theme="dracula"] {
+  --bg: #282a36;
+  --text: #f8f8f2;
+  --border: #44475a;
+  --card-bg: #383a59;
+  --shadow: 0 0 12px rgba(139,233,253,0.2);
+}
+
+/* ------------------------------- */
+/* NORD */
+/* ------------------------------- */
+body[data-theme="nord"] {
+  --bg: #2e3440;
+  --text: #eceff4;
+  --border: #4c566a;
+  --card-bg: #3b4252;
+  --shadow: 0 2px 6px rgba(46,52,64,0.6);
+}
+
+/* ------------------------------- */
+/* MATRIX RAIN */
+/* ------------------------------- */
+body[data-theme="matrix"] {
+  --bg: #000000;
+  --text: #00ff9f;
+  --border: #006f4f;
+  --card-bg: #001a0f;
+  --shadow: 0 0 10px #00ff9f;
+}
+
+/* ------------------------------- */
+/* MONOKAI */
+/* ------------------------------- */
+body[data-theme="monokai"] {
+  --bg: #272822;
+  --text: #f8f8f2;
+  --border: #75715e;
+  --card-bg: #3a3d32;
+  --shadow: 0 2px 8px rgba(248,248,242,0.1);
+}
+
+/* ------------------------------- */
+/* NEON CITY */
+/* ------------------------------- */
+body[data-theme="neon-city"] {
+  --bg: #070014;
+  --text: #00eaff;
+  --border: #ff00a8;
+  --card-bg: #120033;
+  --shadow: 0 0 14px #ff00a8;
+}
+
+/* ------------------------------- */
+/* FIREWATCH */
+/* ------------------------------- */
+body[data-theme="firewatch"] {
+  --bg: #1f2023;
+  --text: #ffe8d6;
+  --border: #ff9e4a;
+  --card-bg: #2b2d31;
+  --shadow: 0 0 10px rgba(255,158,74,0.3);
+}
+
+/* ------------------------------- */
+/* GHOST (ultra soft grayscale) */
+/* ------------------------------- */
+body[data-theme="ghost"] {
+  --bg: #f5f5f5;
+  --text: #555555;
+  --border: #e5e5e5;
+  --card-bg: #ffffff;
+  --shadow: none;
+}
+
+/* ------------------------------- */
+/* OCEAN WAVE */
+/* ------------------------------- */
+body[data-theme="ocean"] {
+  --bg: #021d2e;
+  --text: #bfe9ff;
+  --border: #03344a;
+  --card-bg: #032235;
+  --shadow: 0 0 12px rgba(0,102,153,0.4);
+}
+
+/* ------------------------------- */
+/* SUNSET GRADIENT */
+/* ------------------------------- */
+body[data-theme="sunset"] {
+  --bg: linear-gradient(180deg, #ff9a8b 0%, #ff6a88 50%, #ff99ac 100%);
+  --text: #2b0a12;
+  --border: rgba(255,255,255,0.3);
+  --card-bg: rgba(255,255,255,0.5);
+  --shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ------------------------------- */
+/* STEAMPUNK */
+/* ------------------------------- */
+body[data-theme="steampunk"] {
+  --bg: #2c241b;
+  --text: #e4c49b;
+  --border: #8b5a2b;
+  --card-bg: #3b2f22;
+  --shadow: 0 0 8px rgba(139,90,43,0.4);
+}
+
+/* ------------------------------- */
+/* FUTUREGRID */
+/* ------------------------------- */
+body[data-theme="futuregrid"] {
+  --bg: #0a0a0f;
+  --text: #00d9ff;
+  --border: #262626;
+  --card-bg: #111118;
+  --shadow: 0 0 12px rgba(0,217,255,0.2);
 }
